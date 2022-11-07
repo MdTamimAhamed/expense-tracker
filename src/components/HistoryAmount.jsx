@@ -9,9 +9,9 @@ const HistoryAmount = ({transactionItem}) => {
     <div className={`${transactionItem.amount < 0 ? 'text-red-600' : 'text-green-600'}`}>
         <span>{sign} ${Math.abs(transactionItem.amount)}</span>
         <button 
-        onClick={()=> deleteItem(transactionItem.id)}
-        className="hidden absolute left-full translate-y-[-70%] 
-        p-3 text-red-600 group-hover:block">
+          onClick={()=> deleteItem(transactionItem.id)}
+          className="hidden absolute left-full translate-y-[-70%] 
+          p-3 text-red-600 group-hover:block">
           <i className="fa-solid fa-trash"></i>
         </button>
     </div>
