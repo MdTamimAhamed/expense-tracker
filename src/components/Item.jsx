@@ -5,7 +5,12 @@ const Item = () => {
 
   const[text, setAddItem] = useState('');
   const[addAmount, setAddAmount] = useState();
-  const amount = parseInt(addAmount)
+  const amount = parseInt(addAmount);
+
+  const onChangeHandler = (e) =>{
+    setAddItem(e.target.value)
+    e.resetForm()
+  }
 
   const {addTransaction} = useContext(ExpenseTrackerContext)
 
@@ -26,7 +31,7 @@ const Item = () => {
               <input 
                   type='text'
                   value={text}
-                  onChange ={(e) => setAddItem(e.target.value)}
+                  onChange ={onChangeHandler}
                   placeholder = 'Enter Item'
                   className='border h-10 rounded p-2'
               />
