@@ -9,7 +9,6 @@ const Item = () => {
 
   const onChangeHandler = (e) =>{
     setAddItem(e.target.value)
-    e.resetForm()
   }
 
   const {addTransaction} = useContext(ExpenseTrackerContext)
@@ -22,6 +21,8 @@ const Item = () => {
       amount
     }
     addTransaction(addNewTransaction);
+    setAddItem('')
+    setAddAmount(0)
   }
   return (
     <>
