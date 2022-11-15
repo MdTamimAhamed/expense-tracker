@@ -6,7 +6,7 @@ import { ExpenseTrackerProvider} from "../context/ExpenseTrackerContext"
 
 const ExpenseTrackerTable = () => {
   return (
-    <div className="w-[600px] border p-5">
+    <div className="w-[600px] border rounded-lg p-5">
       <ExpenseTrackerProvider>
         <Balance />
         <ShowIncomeExpense />

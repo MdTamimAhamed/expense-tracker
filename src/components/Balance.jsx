@@ -7,7 +7,7 @@ const Balance = () => {
   const transactionAmount = transaction.map(item =>(item.amount))
 
   //Total Balance
-  const total = transactionAmount.reduce((accmulator, currValue) =>( accmulator += currValue),0).toFixed(2);
+  const total = transactionAmount.reduce((accmulator, currValue) =>( accmulator += currValue),0).toFixed(3);
   const current = total < 0 ? '0.00' : total;
 
   return (

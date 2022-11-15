@@ -8,11 +8,11 @@ const ShowIncomeExpense = () => {
 
   //Total Income
   const income = transactionAmount.filter((item) => (item > 0))
-  .reduce((accumulator, currValue) => (accumulator += currValue),0).toFixed(2);
+  .reduce((accumulator, currValue) => (accumulator += currValue),0).toFixed(3);
 
   //Total Expense
   const expense =(transactionAmount.filter((item) => item < 0)
-  .reduce((accumulator, currValue) => (accumulator += currValue),0) * -1).toFixed(2);
+  .reduce((accumulator, currValue) => (accumulator += currValue),0) * -1).toFixed(3);
 
   return (
     <>
@@ -24,10 +24,6 @@ const ShowIncomeExpense = () => {
             <div>
                 <h3>Expense</h3>
                 <h1 className='text-red-500 text-xl'>-${expense}</h1>
-            </div>
-            <div>
-                <h3>Deposit</h3>
-                <h1 className='text-blue-500 text-xl'>$0.00</h1>
             </div>
         </div>
     </>

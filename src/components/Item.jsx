@@ -2,17 +2,15 @@ import { ExpenseTrackerContext } from "../context/ExpenseTrackerContext";
 import { useState, useContext } from "react"
 
 const Item = () => {
-
+  
+  //States
   const[text, setAddItem] = useState('');
   const[addAmount, setAddAmount] = useState();
-  const amount = parseInt(addAmount);
-
-  const onChangeHandler = (e) =>{
-    setAddItem(e.target.value)
-  }
+  const amount = parseFloat(addAmount);
 
   const {addTransaction} = useContext(ExpenseTrackerContext)
 
+  //on form submit
   const onSubmit = (e) =>{
     e.preventDefault();
     const addNewTransaction ={
@@ -24,6 +22,7 @@ const Item = () => {
     setAddItem('')
     setAddAmount(0)
   }
+
   return (
     <>
         <form onSubmit={onSubmit} className='p-5 [&>div]:mb-5'>
@@ -32,16 +31,18 @@ const Item = () => {
               <input 
                   type='text'
                   value={text}
-                  onChange ={onChangeHandler}
+                  onChange ={(e) => setAddItem(e.target.value)}
                   placeholder = 'Enter Item'
                   className='border h-10 rounded p-2'
+                  required
               />
             </div>
             <div className='flex flex-col'>
               <label>Enter Income/Expense</label>
               <label className='text-xs pb-2'>Use '+' & '-' to indicate 'Income' & 'Expense'</label>
               <input 
-                  type='number'
+                  type='text'
+                  step='0.1'
                   value={addAmount}
                   onChange = {(e) => setAddAmount(e.target.value)}
                   placeholder = 'Example: +5.00 or -5.00'
