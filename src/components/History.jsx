@@ -4,7 +4,6 @@ import HistoryAmount from "./HistoryAmount";
 
 const History = () => {
   const {transaction} = useContext(ExpenseTrackerContext);
-  console.log(transaction)
 
   return (
     <>
